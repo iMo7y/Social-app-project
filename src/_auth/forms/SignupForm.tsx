@@ -8,19 +8,22 @@ import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form";
 import { SignupValidation } from "@/lib/validation";
 import { Loader } from "lucide-react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
+import { useUserContext } from "@/context/AuthContext";
+import { Toast } from "@radix-ui/react-toast";
 const formSchema = z.object({
   username: z.string().min(2).max(50),
 });
 
 const SignupForm = () => {
   const { toast } = useToast()
+  const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
+  const navigate = useNavigate();
+  const { mutateAsync: createUserAccount, isPending: 
+    isCreatingAccount } = useCreateUserAccount();
 
-  const { mutateAsync: createUserAccount, isLoading: 
-    isCreatingUser } = useCreateUserAccount();
-
-    const { mutateAsync: signInAccount, isLoading: isSigningIn} = 
+    const { mutateAsync: signInAccount, isPending: isSigningIn} = 
     useSignInAccount();
   // 1. Define your form.
   const form = useForm<z.infer<typeof SignupValidation>>({
@@ -43,14 +46,22 @@ const SignupForm = () => {
 
     const session = await signInAccount({
       email: values.email,
-      password: values.password;
+      password: values.password
     })
 
     if (!session) {
       return toast({ title: 'Sign in failed. Please try again.'})
     }
 
+    const isLoggedIn = await checkAuthUser();
     
+    if(isLoggedIn) {
+      form.reset();
+
+      navigate('/')
+    } else {
+      return toast({ title: 'Sign up failed. Please try again.'})
+    }
   }
 
   return (
@@ -120,7 +131,7 @@ const SignupForm = () => {
             )}
           />
           <Button type="submit" className="shad-button_primary">
-            {isCreatingUser ? (
+            {isCreatingAccount ? (
               <div className="flex-center gap-2">
                 <Loader /> Loading...
               </div>
