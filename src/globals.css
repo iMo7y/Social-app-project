@@ -220,11 +220,15 @@
   /* Left sidebar */
   .leftsidebar {
     @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-light-1;
+    position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
   }
 
-  .leftsidebar-link {
-    @apply rounded-lg base-medium hover:bg-primary-500 transition;
-  }
+  .leftsidebar-link { 
+    @apply rounded-lg base-medium transition; } .leftsidebar-link:hover { background-color: #5cbdea; 
+    }
 
   /* Post Card */
   .post-card {
@@ -277,6 +281,9 @@
   }
 
   .shad-button_ghost {
-    @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
+    @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-blue-400 !important;
   }
+}
+.bg-5cbdea {
+  background-color: #5cbdea;
 }
