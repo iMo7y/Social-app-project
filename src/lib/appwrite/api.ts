@@ -12,11 +12,10 @@ try {
         user.password,
         user.name
     );
-   //bug
+   
     if(!newAccount) throw Error; 
 
     const avatarUrl = avatars.getInitials(user.name);
-
     const newUser = await saveUserToDB({
         accountId: newAccount.$id,
         name: newAccount.name,
