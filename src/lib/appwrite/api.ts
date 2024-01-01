@@ -12,7 +12,7 @@ try {
         user.password,
         user.name
     );
-   //bug
+   
     if(!newAccount) throw Error; 
 
     const avatarUrl = avatars.getInitials(user.name);
@@ -175,4 +175,15 @@ export async function deleteFile(fileId: string) {
   } catch (error) {
     console.log(error)
   }
+}
+
+export async function getRecentPosts() {
+  const posts = await databases.listDocuments(
+    appwriteConfig.databaseId,
+    appwriteConfig.postCollectionId,
+    [Query.orderDesc('$createdAt'), Query.limit(20)]
+  )
+  if(!posts) throw Error;
+
+  return posts;
 }
