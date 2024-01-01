@@ -12,7 +12,7 @@ try {
         user.password,
         user.name
     );
-
+   
     if(!newAccount) throw Error; 
 
     const avatarUrl = avatars.getInitials(user.name);
