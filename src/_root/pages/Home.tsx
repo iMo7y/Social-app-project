@@ -1,9 +1,10 @@
+import { useGetRecentPosts } from "@/lib/react-query/queriesAndMutations";
+import { Models } from "appwrite";
 import { Loader } from "lucide-react";
 
 
 const Home = () => {
-  const isPostLoading = true;
-  const posts = null;
+  const { data: posts, isPending: isPostLoading, isError: isErrorPosts} = useGetRecentPosts();
   return (
     <div className='flex flex-1'>
       <div className='home-container'>
@@ -12,8 +13,11 @@ const Home = () => {
            {isPostLoading && !posts ? (
             <Loader />
            ) : (
-            <ul>
-
+            <ul className="flex flex-col flex-1 gap-9 w-full">
+              {posts?.documents.map((post: Models.Document) => (
+                <li>{post.caption}</li>
+                //min03:38
+              ))}
             </ul>
            )}
         </div>
