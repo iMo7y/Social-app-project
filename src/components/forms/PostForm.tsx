@@ -46,10 +46,10 @@ const PostForm = ({ post }: PostFormProps) => {
     if(!newPost) {
         toast({
          title: 'Please try again'
-        })
+        });
     }
     navigate('/')
-  }
+  };
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-9 w-full max-w-5xl">
