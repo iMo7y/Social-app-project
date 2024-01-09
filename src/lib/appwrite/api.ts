@@ -102,7 +102,7 @@ export async function createPost(post: INewPost) {
     if(!uploadedFile) throw Error;
 
     //Get file url
-    const fileUrl = getFilePreview(uploadedFile.$id)
+    const fileUrl = await getFilePreview(uploadedFile.$id)
     if(!fileUrl) {
       deleteFile(uploadedFile.$id)
       throw Error;
