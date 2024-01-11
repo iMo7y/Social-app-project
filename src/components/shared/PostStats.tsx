@@ -48,7 +48,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
         : "/assets/icons/save.svg"
         }
         alt="like"
-        width={20}
+        width={20} 
         height={20}
         onClick={() => {}}
         className="cursor-pointer"
