@@ -45,7 +45,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
         <img 
         src={isSaved
         ? "/assets/icons/saved.svg"
-        : "/assets/icons/save.svg"
+        : "/assets/icons/save.svg" 
         }
         alt="like"
         width={20} 
