@@ -51,7 +51,7 @@ const PostStats = ({ post, userId }: PostStatsProps) => {
         width={20} 
         height={20}
         onClick={() => {}}
-        className="cursor-pointer"
+        className="cursor-pointer" 
         />
      </div>
     </div>
