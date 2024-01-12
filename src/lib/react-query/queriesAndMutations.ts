@@ -4,7 +4,7 @@ import {
   useQueryClient,
   useInfiniteQuery,
 } from '@tanstack/react-query'
-import { createPost, createUserAccount, deleteSavedPost, getRecentPosts, likePost, savePost, signInAccount, signOutAccount } from '../appwrite/api'
+import { createPost, createUserAccount, deleteSavedPost, getCurrentUser, getRecentPosts, likePost, savePost, signInAccount, signOutAccount } from '../appwrite/api'
 import { INewPost, INewUser } from '@/types'
 import { CreatePost } from '@/_root/pages'
 import { QUERY_KEYS } from './queryKeys'
@@ -61,10 +61,10 @@ export const useLikePost = () => {
         queryKey:[QUERY_KEYS.GET_POST_BY_ID, data?.$id]
       })
       queryClient.invalidateQueries({
-        queryKey:[QUERY_KEYS.GET_RECENT_POSTS, data?.$id]
+        queryKey:[QUERY_KEYS.GET_RECENT_POSTS]
       })
       queryClient.invalidateQueries({
-        queryKey:[QUERY_KEYS.GET_CURRENT_USER]
+        queryKey:[QUERY_KEYS.GET_POSTS]
       })
       queryClient.invalidateQueries({
         queryKey:[QUERY_KEYS.GET_POSTS]
@@ -84,10 +84,10 @@ export const useSavePost = () => {
         queryKey:[QUERY_KEYS.GET_RECENT_POSTS]
       })
       queryClient.invalidateQueries({
-        queryKey:[QUERY_KEYS.GET_CURRENT_USER]
+        queryKey:[QUERY_KEYS.GET_POSTS]
       })
       queryClient.invalidateQueries({
-        queryKey:[QUERY_KEYS.GET_POSTS]
+        queryKey:[QUERY_KEYS.GET_CURRENT_USER]
       })
     }
   })
@@ -103,11 +103,18 @@ export const useDeleteSavedPost = () => {
         queryKey:[QUERY_KEYS.GET_RECENT_POSTS]
       })
       queryClient.invalidateQueries({
-        queryKey:[QUERY_KEYS.GET_CURRENT_USER]
-      })
-      queryClient.invalidateQueries({
         queryKey:[QUERY_KEYS.GET_POSTS]
       })
+      queryClient.invalidateQueries({
+        queryKey:[QUERY_KEYS.GET_CURRENT_USER]
+      })
     }
+  })
+}
+
+export const useGetCurrentUser = () => {
+  return useQuery({
+    queryKey: [QUERY_KEYS.GET_CURRENT_USER],
+    queryFn: getCurrentUser
   })
 }

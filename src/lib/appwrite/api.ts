@@ -215,12 +215,12 @@ export async function savePost(postId: string, userId: string) {
       {
         user: userId,
         post: postId,
-
       }
-    )
-    if(!updatedPost) throw Error;
-    
-    return updatedPost
+    );
+
+    if (!updatedPost) throw Error;
+
+    return updatedPost;
   } catch (error) {
     console.log(error);
   }
