@@ -187,7 +187,7 @@ export async function getRecentPosts() {
 
   return posts;
 }
-
+ 
 export async function likePost(postId: string, likesArray: string[]) {
   try {
     const updatedPost = await databases.updateDocument(
