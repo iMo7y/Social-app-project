@@ -222,7 +222,7 @@ export async function savePost(postId: string, userId: string) {
 
     return updatedPost;
   } catch (error) {
-    console.log(error);
+    console.log(error); 
   }
 }
   
