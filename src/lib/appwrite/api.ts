@@ -218,7 +218,7 @@ export async function savePost(postId: string, userId: string) {
       }
     );
 
-    if (!updatedPost) throw Error;
+    if (!updatedPost) throw Error; 
 
     return updatedPost;
   } catch (error) {
