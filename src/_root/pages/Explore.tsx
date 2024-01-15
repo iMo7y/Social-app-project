@@ -4,7 +4,7 @@ const Explore = () => {
   return (
     <div> 
 
-    </div>
+    </div> 
   )
 }
 
