@@ -5,7 +5,7 @@ const Explore = () => {
     <div> 
 
     </div>
-  ) 
+  )
 }
 
 export default Explore
