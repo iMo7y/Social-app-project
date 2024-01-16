@@ -2,7 +2,7 @@ import Loader from "@/components/shared/Loader";
 import PostStats from "@/components/shared/PostStats";
 import { Button } from "@/components/ui/button";
 import { useUserContext } from "@/context/AuthContext";
-import { useGetPostById } from "@/lib/react-query/queriesAndMutations";
+import { useDeletePost, useGetPostById } from "@/lib/react-query/queriesAndMutations";
 import { multiFormatDateString } from "@/lib/utils";
 import { useParams, Link } from "react-router-dom";
 
@@ -10,8 +10,13 @@ const PostDetails = () => {
   const { id } = useParams();
   const { data: post, isPending } = useGetPostById(id || '');
   const { user } = useUserContext();
+  const { mutate } = useDeletePost();
 
-  const handleDeletePost = () => {};
+  const handleDeletePost = () => {
+    const postId = post?.$id; 
+    const imageId = post?.imageId; 
+    mutate({ postId, imageId });
+  };
 
   return (
     <div className="post_details-container">
@@ -69,14 +74,12 @@ const PostDetails = () => {
                 <Button
                   onClick={handleDeletePost}
                   variant="ghost"
-                  className={
-                    user.id !== post?.creator.$id
-                      ? 'ghost_details-delete_btn hidden'
-                      : 'ghost_details-delete_btn'
-                  }
+                  className={`post_details-delete_btn ${
+                    user.id !== post?.creator.$id && "hidden"
+                  }`}
                 >
                   <img
-                    src="/assets/icons/delete.svg"
+                    src={"/assets/icons/delete.svg"}
                     alt="delete"
                     width={24}
                     height={24}
