@@ -11,7 +11,7 @@ import { Loader } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'
 import { useCreateUserAccount, useSignInAccount } from "@/lib/react-query/queriesAndMutations";
 import { useUserContext } from "@/context/AuthContext";
-
+ 
 const SignupForm = () => {
   const { toast } = useToast()
   const { checkAuthUser } = useUserContext();
