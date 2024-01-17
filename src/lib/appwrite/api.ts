@@ -318,23 +318,19 @@ export async function updatePost(post: IUpdatePost) {
   }
 }
 
-export async function deletePost(postId?: string, imageId?: string) {
-  if (!postId || !imageId) return;
+export async function deletePost(postId: string, imageId: string) {
+  if(!postId || !imageId) throw Error;
 
   try {
-    const statusCode = await databases.deleteDocument(
+    await databases.deleteDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
       postId
-    );
+    )
 
-    if (!statusCode) throw Error;
-
-    await deleteFile(imageId);
-
-    return { status: "Ok" };
+    return { status: 'ok' }
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 }
 
@@ -466,16 +462,6 @@ export async function getUsers(limit?: number) {
     if (!users) throw Error;
 
     return users;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export async function getAccount() {
-  try {
-    const currentAccount = await account.get();
-
-    return currentAccount;
   } catch (error) {
     console.log(error);
   }
