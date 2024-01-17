@@ -11,10 +11,7 @@ import { Loader } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'
 import { useSignInAccount } from "@/lib/react-query/queriesAndMutations";
 import { useUserContext } from "@/context/AuthContext";
-import { Toast } from "@radix-ui/react-toast";
-const formSchema = z.object({
-  username: z.string().min(2).max(50),
-});
+
 
 const SigninForm = () => {
   const { toast } = useToast()
