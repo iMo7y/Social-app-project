@@ -1,14 +1,9 @@
-Moelink
-
-
-
 # Moelink
 
 ## ✌️ Introduction
 
 Moelink is a modern social-like web app with a stunning UI, providing a native mobile feel. It features a special tech stack, infinite scroll, and exceptional performance using React JS, Appwrite, TypeScript, and more.
 
-## 🚀 Demo
 
 Try the App: [Moelink](#)
 
