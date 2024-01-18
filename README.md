@@ -1,6 +1,5 @@
 Moelink
 
-![logo2 0](https://github.com/iMo7y/Social-app-project/assets/141570244/deaffdbd-c4eb-4d9e-962b-8c212324b280)
 
 
 # Moelink
