@@ -14,13 +14,12 @@ Moelink offers a variety of amazing features to enhance your experience:
 - 💯 Infinite, Smooth Scroll
 - 🎩 Upload your Posts
 - 👾 Like and Save posts
+- 👨🏻 Profile details page
 - 📦 Explore
 - 🔖 Edit Posts
 - 🍭 Search posts
 - 💻 Fully Responsive
 - 🚀 Fast Downloading (yet to be implemented; stay tuned!! 😉)
-- Profile details page
-- Top creator pages
 - Follow and Unfollow functionality
 - Comment in posts
 - Stories
@@ -40,7 +39,6 @@ Moelink is built using the following technologies:
 
 
 Project structure
-
 $PROJECT_ROOT
 ├── index.html # Entry point
 ├── public
