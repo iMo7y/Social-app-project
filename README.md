@@ -1,30 +1,75 @@
-# React + TypeScript + Vite
+Moelink
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![logo](https://github.com/iMo7y/Social-app-project/assets/141570244/c267100b-f79d-4400-83f0-f72122a9cedf)
 
-Currently, two official plugins are available:
+Introducing Moelink ✌️
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Its a modern social like web app with a stunning UI with a native mobile feel, a special tech stack, an infinite scroll feature, and amazing performance using React JS, Appwrite, TypeScript, and more.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+🚀 Demo 
+ 
 
-- Configure the top-level `parserOptions` property like this:
+Try the App: Moelink
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+🧐 Features
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Moelink comes up with a whole bunch of amazing features to provide you the best experience, Here're some of our best features.
+
+ 💯 Infinite, Smooth: Scroll
+ 🎩 Upload your Posts
+ 👾 Like and Save posts
+ 📦 Explore
+ 🔖 Edit Posts
+ 🍭 Search posts
+ 💻 Fully Responsive
+ 🚀 Fast Downloading
+(yet to be implemented; stay tuned!! 😉)
+ Profile details page
+ Top creator pages
+ Follow and Unfollow functionality
+ Comment in posts
+ Stories
+ Post Reactions
+
+💻 Built with
+
+React.js - The library for web and native user interfaces
+Appwrite - Platform which provide backend as a service
+TypeScript - TypeScript extends JavaScript by adding types to the language
+Zod - TypeScript-first schema validation with static type inference
+React-Query - To fetch & update data efficiently
+Project structure
+
+$PROJECT_ROOT
+├── index.html             # Entry point
+├── public
+│   └── assets
+│       ├── icons
+│       └── images
+└── src
+    ├── _auth
+    │   └── forms
+    ├── components
+    │   ├── forms
+    │   ├── shared      # Global components
+    │   └── ui          # Shadcn
+    ├── constants       # Constant variables
+    ├── context
+    ├── hooks
+    ├── lib
+    │   ├── appwrite    # Appwrite config
+    │   ├── react-queryAndMutations # React-query config
+    │   └── validation  # Schema validation with zod
+    ├── _root
+    │   └── pages
+    └── types           # Custom types
+👨‍💻 Author
+
+👤 Mohammed Saadi
+
+Instagram: @imo7y__
+
+Github: @iMo7y
+
+Linkedin: @Mohammed Saadi
