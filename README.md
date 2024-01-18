@@ -47,28 +47,29 @@ Moelink is built using the following technologies:
 Project structure
 
 $PROJECT_ROOT
-├── index.html             # Entry point
+├── index.html # Entry point
 ├── public
-│   └── assets
-│       ├── icons
-│       └── images
+│ └── assets
+│ ├── icons
+│ └── images
 └── src
-    ├── _auth
-    │   └── forms
-    ├── components
-    │   ├── forms
-    │   ├── shared      # Global components
-    │   └── ui          # Shadcn
-    ├── constants       # Constant variables
-    ├── context
-    ├── hooks
-    ├── lib
-    │   ├── appwrite    # Appwrite config
-    │   ├── react-queryAndMutations # React-query config
-    │   └── validation  # Schema validation with zod
-    ├── _root
-    │   └── pages
-    └── types           # Custom types
+├── _auth
+│ └── forms
+├── components
+│ ├── forms
+│ ├── shared # Global components
+│ └── ui # Shadcn
+├── constants # Constant variables
+├── context
+├── hooks
+├── lib
+│ ├── appwrite # Appwrite config
+│ ├── react-queryAndMutations # React-query config
+│ └── validation # Schema validation with zod
+├── _root
+│ └── pages
+└── types # Custom types
+
 👨‍💻 Author
 
 👤 Mohammed Saadi
